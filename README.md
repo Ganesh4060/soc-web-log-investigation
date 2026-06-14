@@ -89,7 +89,7 @@ Example target:
 ### Example Splunk Query
 
 ```spl
-index=web_logs uri_path="*/etc/passwd*"
+index=web_practicing uri_path="*/etc/passwd*"
 ```
 
 ### Security Impact
@@ -119,7 +119,7 @@ sqlmap
 ### Example Splunk Query
 
 ```spl
-index=web_logs user_agent="*sqlmap*"
+index=web_practicing user_agent="*sqlmap*"
 ```
 
 ### Observations
@@ -143,9 +143,7 @@ Several requests originated from tools commonly used for testing, automation, an
 ### Example Splunk Query
 
 ```spl
-index=web_logs
-| stats count by user_agent
-| sort -count
+index=web_practicing| stats count by user_agent| sort -count
 ```
 
 ### Observed User Agents
@@ -169,8 +167,7 @@ Analyzed server responses to identify unusual activity.
 ### Example Splunk Query
 
 ```spl
-index=web_logs
-| stats count by status
+index=web_practicing| stats count by status
 ```
 
 ### Findings
